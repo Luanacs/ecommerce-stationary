@@ -1,19 +1,21 @@
 package entities;
 
-public class Products {
+public class Product {
 
 	private String name;
-	private String code;
+	private String type;
+	private int code;
 	private double price;
 
-	public Products(String name, String code, double price) {
+	public Product( String type,String name, int code, double price) {
 		super();
 		this.name = name;
+		this.type=type;
 		this.code = code;
 		this.price = price;
 	}
 
-	public Products() {
+	public Product() {
 
 	}
 
@@ -25,11 +27,11 @@ public class Products {
 		this.name = name;
 	}
 
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 
@@ -40,9 +42,18 @@ public class Products {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public String toString() {
-		return name + "\t" + code + "\t\t" + price;
+		return type +"\t"+ name + "\t\t" + code + "\t\t" + price;
 	}
 
 }

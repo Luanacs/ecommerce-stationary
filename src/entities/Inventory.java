@@ -5,34 +5,43 @@ import java.util.List;
 
 public class Inventory {
 
-	private Products product1 = new Products("BeKind Notebook","001", 29.0);
-	private Products product2 = new Products("SweetMoon Notebook","002", 25.0);
-	private Products product3 = new Products("Flowers Notebook","003", 27.0);
-	private List<Products> listProducts = new ArrayList<>();
-
-	public Products getProduct1() {
+	private Product product1 = new Product("Notebook","BeKind",001, 29.0);
+	private Product product2 = new Product("Notebook","Sweet",002, 25.0);
+	private Product product3 = new Product("Notebook","Flowers",003, 27.0);
+	private List<Product> listProducts = new ArrayList<>();
+	
+	public Inventory() {
+		
+	}
+	
+	public Product getProduct1() {
 		return product1;
 	}
 
-	public Products getProduct2() {
+	public Product getProduct2() {
 		return product2;
 	}
 
-	public Products getProduct3() {
+	public Product getProduct3() {
 		return product3;
 	}
+
 
 	public void listProducts() {
 		this.listProducts.add(product1);
 		this.listProducts.add(product2);
 		this.listProducts.add(product3);
 	}
+	public List<Product> getListProduct(){
+		return listProducts;
+	}
 
 	public void printInventory() {
 		listProducts();
-		for (Products listProducts : listProducts) {
-			System.out.println(listProducts.getName() + "\t\t" + listProducts.getCode() + "\t" + listProducts.getPrice());
+		for (Product product : listProducts) {
+			System.out.println(product.getType()+"\t"+ product.getName() +"\t\t" +product.getCode()  +"\t"+ product.getPrice());
 		}
 	}
+
 
 }
